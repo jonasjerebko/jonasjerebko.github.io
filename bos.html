@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- Hls.js script -->
+    <script src="//cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+</head>
+    <style>
+        body{margin:0px;padding:0px;overflow:hidden;}
+    </style>
+<body>
+    <video width="100%" controls id="player"></video>
+    <script>
+        if (Hls.isSupported()) {
+            var video = document.getElementById('player');
+            var player = new Hls();
+            player.loadSource('//fartshd.ml/assets/playlist/nbcbos.m3u8');
+            player.attachMedia(video);
+            player.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
+    </script>
+</body>
+</html>
