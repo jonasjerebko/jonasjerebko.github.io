@@ -17,7 +17,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('//fartshd.ml/assets/playlist/nbcne.m3u8');
+            player.loadSource('assets/playlist/nbcne.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
