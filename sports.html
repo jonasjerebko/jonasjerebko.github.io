@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>my post</title>
-<style>
-body{margin:0px;padding:0px;overflow:hidden;}
-</style>
-<script type="text/javascript" src="//www.fartshd.ml/assets/js/clappr.min.js"></script>
-<script type="text/javascript" src="//www.fartshd.ml/assets/js/level-selector.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Hls.js Player test</title>
+    <!-- Hls.js script -->
+    <script src="assets/js/hls.min.js"></script>
+
 </head>
+    <style>
+        body{margin:0px;padding:0px;overflow:hidden;}
+    </style>
 <body>
-<div id="playobject"></div>
-<script src="//www.fartshd.ml/assets/js/sports.js">
-</script>
+    <video id="player"></video>
+    <script>
+        if (Hls.isSupported()) {
+            var video = document.getElementById('player');
+            var player = new Hls();
+            player.loadSource('https://sportshq-mediapackage-cedexis.cbsaavideo.com/out/v1/be87d7783e5c4270a5830ea5d1164850/desktop.m3u8');
+            player.attachMedia(video);
+            player.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
+    </script>
 </body>
 </html>
