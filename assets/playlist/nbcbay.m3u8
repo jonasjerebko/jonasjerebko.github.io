@@ -1,0 +1,17 @@
+#EXTM3U
+#EXT-X-MEDIA:TYPE=CLOSED-CAPTIONS,GROUP-ID="cc",LANGUAGE="en",NAME="English",AUTOSELECT=YES,INSTREAM-ID="CC1"
+#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="master_broadcast",LANGUAGE="eng",NAME="Master Audio",AUTOSELECT=YES,DEFAULT=YES
+#EXT-X-STREAM-INF:BANDWIDTH=1326000,RESOLUTION=960x540,CODECS="mp4a.40.2, avc1.64001f",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/1296k/prog.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=826000,RESOLUTION=640x360,CODECS="mp4a.40.2, avc1.640016",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/796k/prog.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=1926000,RESOLUTION=960x540,CODECS="mp4a.40.2, avc1.64001f",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/1896k/prog.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=526000,RESOLUTION=416x234,CODECS="mp4a.40.2, avc1.64000b",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/496k/prog.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=326000,RESOLUTION=416x234,CODECS="mp4a.40.2, avc1.64000b",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/296k/prog.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=2626000,RESOLUTION=1280x720,CODECS="mp4a.40.2, avc1.640020",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/2596k/prog.m3u8
+#EXT-X-STREAM-INF:BANDWIDTH=4326000,RESOLUTION=1920x1080,CODECS="mp4a.40.2, avc1.640028",AUDIO="master_broadcast"
+http://tvecsnbayarea-i.akamaihd.net/hls/live/219791/CSNbayareax/4296k/prog.m3u8
