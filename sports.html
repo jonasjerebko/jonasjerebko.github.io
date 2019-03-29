@@ -16,7 +16,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('https://sportshq-mediapackage-cedexis.cbsaavideo.com/out/v1/be87d7783e5c4270a5830ea5d1164850/desktop.m3u8');
+            player.loadSource('assets/playlist/nbcbay.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
