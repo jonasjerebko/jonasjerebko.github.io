@@ -16,7 +16,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('http://www.worldcupfarts.ml///fartshd.ml/assets/playlist/nbcbay.m3u8');
+            player.loadSource('assets/playlist/nbcbay.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
