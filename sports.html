@@ -16,7 +16,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('assets/playlist/nbcbay.m3u8');
+            player.loadSource('//mlblive-akc.mlb.com/ls01/mlbam/mlb_network/NETWORK_LINEAR_1/master_wired.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
