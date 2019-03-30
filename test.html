@@ -19,7 +19,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('//185.152.66.51:25461/live/hyykbkgv/qI46mvqW50/11062.m3u8?token=QhpRUUoMEw4VUFdbBAULAgQAUQJQVFFWAQ1WVwZRW1AADltVDFUDBQNBH0BAREoDUAxqClFDDVMCCAIEHxFMQFxKZlldRgsWDlUFVAcSFERFCFgGF1sHThFIXVIRCRsGCwAMEhVGVExDBkEMUlxnAlQXXABQQw0MRlRYGhFcV2xdXVRRVwATDhVTEU4RWUsWE1sXN1wMUkJkWUZYVkEZcFhaVVUZLV9AUhFdB0cQdCpyQxlBVwhDEFJMURQJEQ0BAQobHBsHXkFZF0EbEQoaM2JDGUFQGUMHXUtdWV0RAxFUC0wIG0gTXUQ8QQdAREoDUAxQERdbFVIRFBZbUktmUFZWV1VaEFhbWRARWBECGkoTDFoNXBVYEGxIXVIRCRsEDwsNEkQ=');
+            player.loadSource('//iptv.wtf:25461/live/hyykbkgv/qI46mvqW50/11062.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
