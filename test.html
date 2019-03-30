@@ -8,7 +8,7 @@
     <title>FartsHD</title>
     <link rel="shortcut icon" type="image/x-icon" href="assets/image/favicon.png"/>
    <!-- Hls.js script -->
-    <script src="//cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
 </head>
     <style>
         body{margin:0px;padding:0px;overflow:hidden;}
@@ -19,7 +19,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('//ul.cdn574.net:8443/hls/5nglbze2gyig.m3u8?s=t4y1X_XGupwpueSWvhQe8w&e=1553942036');
+            player.loadSource('https://ul.cdn574.net:8443/hls/5nglbze2gyig.m3u8?s=t4y1X_XGupwpueSWvhQe8w&e=1553942036');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
