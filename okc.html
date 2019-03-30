@@ -19,7 +19,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('//live.vimeocdn.com/1553910985-0x3235a5385ca45f52cd9bd5083ce010048aafd9ee/573da658-8968-472b-8bee-012198a6ee9d/hls.m3u8');
+            player.loadSource('//live.vimeocdn.com/1553914592-0x755a4152cdc4df8409e8f5e3183cd69f5a079de0/573da658-8968-472b-8bee-012198a6ee9d/hls.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
