@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <meta name="referrer" content="no-referrer"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FartsHD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/image/favicon.png"/>
+   <!-- Hls.js script -->
+    <script src="//cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
+</head>
+    <style>
+        body{margin:0px;padding:0px;overflow:hidden;}
+    </style>
+<body>
+    <video width="100%" controls id="player"></video>
+    <script>
+        if (Hls.isSupported()) {
+            var video = document.getElementById('player');
+            var player = new Hls();
+            player.loadSource('//hlslive-llc-ewr1.media.mlb.com/token=exp=1553993144~id=00u7k4h9zSwRV5cUT356~data=80cced68-88f2-41f3-b34b-931ba8943c0a~hash=74629ced9fcab80252032f256a23e1002b5041fd/ls01/mlb/2019/03/30/Away_VIDEO_spa_Boston_Red_Sox_Seattle_Ma_20190330_1553904302950/master_desktop_ts_slide_gdfp.m3u8');
+            player.attachMedia(video);
+            player.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
+    </script>
+</body>
+</html>
