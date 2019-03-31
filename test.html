@@ -19,7 +19,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('//hlslive-llc-ewr1.media.mlb.com/token=exp=1554076122~id=00u7k4h9zSwRV5cUT356~data=06c67cec-e7de-4c69-acbe-981f0b3076c3~hash=e5470b8397f699a2ae41073b093829662268d2fa/ls01/mlb/2019/03/31/Home_VIDEO_eng_Boston_Red_Sox_Seattle_Ma_20190331_1553984512501/master_desktop_ts_slide_gdfp.m3u8');
+            player.loadSource('//hlslive-akc-ewr1.media.mlb.com/hdnts=exp=1554075839~acl=/*~id=00ucirl41GiNLMjhP356~data=52288f81-156f-441c-9d0e-01fd61b42683~hmac=bb87a34efe88b1b4c4695b2e9951d550e56710afd3cd895068523997d8fac8bd/e05c0d25199edbc6593edd0a9bcdff71/ls01/mlb/2019/03/31/Away_VIDEO_spa_Boston_Red_Sox_Seattle_Ma_20190331_1553984512518/master_desktop_ts_complete.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
@@ -29,7 +29,7 @@
             XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
         var rewrittenUrl = url ;
                 if (url.indexOf('https://playback.svcs.mlb.com/silk/events/') !== -1){
-                            rewrittenUrl = 'http://www.worldcupfarts.ml/http://www.ekosport.ga/keym.php?kl=' + btoa(url);
+                            rewrittenUrl = 'http://www.worldcupfarts.ml/http://www.ekosport.cf/keym.php?kl=' + btoa(url);
         }
         open.call(this, method, rewrittenUrl, async, user, pass);
         };
