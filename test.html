@@ -13,16 +13,6 @@
     </style>
 <body>
     <video width="100%" controls id="player"></video>
-    <script>
-        if (Hls.isSupported()) {
-            var video = document.getElementById('player');
-            var player = new Hls();
-            player.loadSource('//ad.mysisli.com/live/fartss/index.m3u8');
-            player.attachMedia(video);
-            player.on(Hls.Events.MANIFEST_PARSED, function() {
-                video.play();
-            });
-        }
-    </script>
+    <script src="assets/js/2farts.js"></script>
 </body>
 </html>
