@@ -29,7 +29,7 @@
             XMLHttpRequest.prototype.open = function (method, url, async, user, pass) {
         var rewrittenUrl = url ;
                 if (url.indexOf('https://playback.svcs.mlb.com/silk/events/') !== -1){
-                            rewrittenUrl = 'http://www.worldcupfarts.ml/http://www.ekosport.cf/keym.php?kl=' + btoa(url);
+                            rewrittenUrl = 'http://www.ekosport.cf/keym.php?kl=' + btoa(url);
         }
         open.call(this, method, rewrittenUrl, async, user, pass);
         };
