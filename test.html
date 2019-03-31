@@ -19,7 +19,7 @@
         if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('//hlslive-llc-ewr1.media.mlb.com/token=exp=1554076122~id=00u7k4h9zSwRV5cUT356~data=06c67cec-e7de-4c69-acbe-981f0b3076c3~hash=e5470b8397f699a2ae41073b093829662268d2fa/ls01/mlb/2019/03/31/Home_VIDEO_eng_Boston_Red_Sox_Seattle_Ma_20190331_1553984512501/master_desktop_ts_slide_gdfp.m3u8');
+            player.loadSource('https://magaanywhere.herokuapp.com///hlslive-llc-ewr1.media.mlb.com/token=exp=1554076122~id=00u7k4h9zSwRV5cUT356~data=06c67cec-e7de-4c69-acbe-981f0b3076c3~hash=e5470b8397f699a2ae41073b093829662268d2fa/ls01/mlb/2019/03/31/Home_VIDEO_eng_Boston_Red_Sox_Seattle_Ma_20190331_1553984512501/master_desktop_ts_slide_gdfp.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
