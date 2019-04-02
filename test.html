@@ -19,10 +19,16 @@
         var video = document.getElementById('video');
         var hls = new Hls({
             p2pConfig: {
+                wsSignalerAddr: 'wss://signal.cdnbye.com/wss',
                 logLevel: true,
                 live: true,        // set to true in live mode
                 // Other p2pConfig options provided by CDNBye
             }
+            hlsjsConfig: {
+   "maxBufferSize": 0,
+   "maxBufferLength": 6,
+   "liveSyncDuration": 24,
+   }
         });
         hls.loadSource('//ad.mysisli.com/live/fartss/index.m3u8');
         hls.attachMedia(video);
