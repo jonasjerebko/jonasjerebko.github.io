@@ -12,6 +12,7 @@
 <body>
     <video style="width: 100vw;" controls id="fartss"></video>
     <script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     if(Hls.isSupported()) {
         var video = document.getElementById('fartss');
         var hls = new Hls({
