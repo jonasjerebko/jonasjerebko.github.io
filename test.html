@@ -11,6 +11,28 @@
 </head>
 <body>
     <video style="width: 100vw;" controls id="player"></video>
-    <script src="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/js/2farts.js"></script>
+    <script>
+        document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
+    if(Hls.isSupported()) {
+        var video = document.getElementById('video');
+        var hls = new Hls({
+            p2pConfig: {
+                wsSignalerAddr: 'wss://signal.cdnbye.com/wss',
+                logLevel: true,
+                live: true,        // set to true in live mode
+                // Other p2pConfig options provided by CDNBye
+            }
+        });
+        hls.loadSource('//ad.mysisli.com/live/fartss/index.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED,function(event, data) {
+            video.play();
+        });
+        hls.p2pEngine.on('stats', function ({totalHTTPDownloaded, totalP2PDownloaded, totalP2PUploaded}) {
+            var total = totalHTTPDownloaded + totalP2PDownloaded;
+            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+        });
+    }
+    </script>
 </body>
 </html>
