@@ -10,11 +10,13 @@
     <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
 </head>
 <body>
-    <video style="width: 100vw;" controls id="fartss"></video>
+    <video style="width: 100vw;" controls id="video"></video>
+    <p id="version"></p>
+    <p id="info"></p>
     <script>
     document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
     if(Hls.isSupported()) {
-        var video = document.getElementById('fartss');
+        var video = document.getElementById('video');
         var hls = new Hls({
             p2pConfig: {
                 logLevel: true,
