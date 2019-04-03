@@ -4,36 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FartsHD</title>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/css/styles.css">
-    <link rel="shortcut icon" type="image/x-icon" href="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/image/favicon.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="assets/image/favicon.png"/>
    <!-- Hls.js script -->
-    <script src="//cdn.jsdelivr.net/npm/cdnbye@latest"></script>
+    <script src="//cdn.jsdelivr.net/hls.js/latest/hls.min.js"></script>
 </head>
+    <style>
+        body{margin:0px;padding:0px;overflow:hidden;}
+    </style>
 <body>
-    <video style="width: 100vw;" controls id="video"></video>
-    <p id="version"></p>
-    <p id="info"></p>
+    <video width="100%" controls id="player"></video>
     <script>
-        document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
-    if(Hls.isSupported()) {
-        var video = document.getElementById('video');
-        var hls = new Hls({
-            p2pConfig: {
-                logLevel: true,
-                live: true,        // set to true in live mode
-                // Other p2pConfig options provided by CDNBye
-            }
-        });
-        hls.loadSource('//ad.mysisli.com/live/fartss/index.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED,function(event, data) {
-            video.play();
-        });
-        hls.p2pEngine.on('stats', function ({totalHTTPDownloaded, totalP2PDownloaded, totalP2PUploaded}) {
-            var total = totalHTTPDownloaded + totalP2PDownloaded;
-            document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-        });
-    }
+        if (Hls.isSupported()) {
+            var video = document.getElementById('player');
+            var player = new Hls();
+            player.loadSource('//ad.mysisli.com/live/fartss/index.m3u8');
+            player.attachMedia(video);
+            player.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
     </script>
 </body>
 </html>
