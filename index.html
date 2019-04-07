@@ -34,37 +34,5 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <h3>download info:</h3>
 <p id="info"></p>
 
-<script>
-    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
-    flowplayer('#player', {
-        live: true,  // set if it's a live stream
-        ratio: 9/16, // set the aspect ratio of the stream
-        autoplay: true,
-        native_fullscreen: true,
-        fullscreen: true,
-        embed: false,
-        clip: {
-            sources: [
-                // path to the HLS m3u8
-                { type: "application/x-mpegurl", src: "//fartshd.b-cdn.net/hls/fartss.m3u8"},
-            ]
-        },
-        hlsjs: {
-            debug: false,
-            maxBufferSize: 0,       
-    maxBufferLength: 5,     
-    liveSyncDuration: 30,   // used in live
-    // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                logLevel: true,
-                live: false,        // set to true in live mode
-                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                    var total = totalHTTPDownloaded + totalP2PDownloaded;
-                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-                },
-                // Other p2pConfig options provided by CDNBye
-            }
-        }
-    });
-</script>
+<script src="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/js/fartss.js"></script>
 </html>   
