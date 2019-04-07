@@ -1,1 +1,70 @@
-    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FartsHD</title>
+    <link rel="shortcut icon" type="image/x-icon" href="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/image/favicon.png"/>
+<link rel="stylesheet" href="//releases.flowplayer.org/7.2.6/skin/skin.css">
+<style>
+        body{margin:0px;padding:0px;overflow:hidden;}
+    </style>
+<!-- hls.js -->
+<script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hls.light.min.js"></script>
+<!-- flowplayer -->
+<script src="//releases.flowplayer.org/7.2.6/flowplayer.min.js"></script>
+   <!-- Hls.js script -->
+    <script src="//releases.flowplayer.org/7.2.6/flowplayer.min.js"></script>
+     <!-- Histats.com  START  (aync)-->
+<script type="text/javascript">var _Hasync= _Hasync|| [];
+_Hasync.push(['Histats.start', '1,4245271,4,0,0,0,00010000']);
+_Hasync.push(['Histats.fasi', '1']);
+_Hasync.push(['Histats.track_hits', '']);
+(function() {
+var hs = document.createElement('script'); hs.type = 'text/javascript'; hs.async = true;
+hs.src = ('//s10.histats.com/js15_as.js');
+(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(hs);
+})();</script>
+<noscript><a href="/" target="_blank"><img  src="//sstatic1.histats.com/0.gif?4245271&101" alt="web hit counter" border="0"></a></noscript>
+<!-- Histats.com  END  -->
+</head>
+<body>
+<div id="player"></div>
+<p id="version"></p>
+<h3>download info:</h3>
+<p id="info"></p>
+
+<script>
+    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
+    flowplayer('#player', {
+        live: true,  // set if it's a live stream
+        ratio: 9/16, // set the aspect ratio of the stream
+        autoplay: true,
+        native_fullscreen: true,
+        fullscreen: true,
+        embed: false,
+        clip: {
+            sources: [
+                // path to the HLS m3u8
+                { type: "application/x-mpegurl", src: "//fartshd.b-cdn.net/hls/fartss.m3u8"},
+            ]
+        },
+        hlsjs: {
+            debug: false,
+            maxBufferSize: 0,       
+    maxBufferLength: 5,     
+    liveSyncDuration: 30,   // used in live
+    // Other hlsjsConfig options provided by hls.js
+            p2pConfig: {
+                logLevel: true,
+                live: false,        // set to true in live mode
+                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
+                    var total = totalHTTPDownloaded + totalP2PDownloaded;
+                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
+                },
+                // Other p2pConfig options provided by CDNBye
+            }
+        }
+    });
+</script>
+</html>   
