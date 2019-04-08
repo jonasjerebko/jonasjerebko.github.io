@@ -31,7 +31,6 @@ hs.src = ('//s10.histats.com/js15_as.js');
 <body>
 <div id="player"></div>
 <p id="version"></p>
-<h3>download info:</h3>
 <p id="info"></p>
 
 <script>
@@ -56,6 +55,7 @@ hs.src = ('//s10.histats.com/js15_as.js');
     liveSyncDuration: 30,   // used in live
     // Other hlsjsConfig options provided by hls.js
             p2pConfig: {
+                wsSignalerAddr: 'ws://signal.fartshd.ml/ws',
                 logLevel: true,
                 live: false,        // set to true in live mode
                 getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
