@@ -9,45 +9,28 @@
     <style>
         body{margin:0px;padding:0px;overflow:hidden;}
     </style>
-<!-- serverless cdn -->
-<script src="//cdn.jsdelivr.net/npm/cdnbye@latest/dist/hls.light.min.js"></script>
+<!-- hls.js -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/hls.js/0.10.1/hls.light.min.js"></script>
 <!-- flowplayer -->
 <script src="//cdn.jsdelivr.net/npm/flowplayer@7.2.7/dist/flowplayer.min.js"></script>
 </head>
-    <body>
-<div id="player"></div><p id="version"></p><p id="info"></p>
+<body>
+    <div id="player"></div>
+
 <script>
-    document.querySelector('#version').innerText = `hls.js version: ${Hls.version}  cdnbye version: ${Hls.engineVersion}`;
-    flowplayer('#player', {
-        live: true,  // set if it's a live stream
-        ratio: 9/16, // set the aspect ratio of the stream
+flowplayer('#player', {
+            live: true,  // set if it's a livestream
+            ratio: 9/16, // set the aspect ratio of the stream
             autoplay: false, 
             native_fullscreen: true, 
             fullscreen: true, 
             embed: false,
-        clip: {
-            sources: [
-                // path to the HLS m3u8
-                { type: "application/x-mpegurl", src: "//138.197.59.74:8080/hls/fartss.m3u8"},
-            ]
-        },
-        hlsjs: {
-            maxBufferSize: 0,       
-            maxBufferLength: 5,     
-            liveSyncDuration: 30,
-            debug: false,
-            // Other hlsjsConfig options provided by hls.js
-            p2pConfig: {
-                wsSignalerAddr: 'ws://signal.fartshd.ml/ws',
-                logLevel: true,
-                live: true,        // set to true in live mode
-                getStats: function (totalP2PDownloaded, totalP2PUploaded, totalHTTPDownloaded) {
-                    var total = totalHTTPDownloaded + totalP2PDownloaded;
-                    document.querySelector('#info').innerText = `p2p ratio: ${Math.round(totalP2PDownloaded/total*100)}%, saved traffic: ${totalP2PDownloaded}KB, uploaded: ${totalP2PUploaded}KB`;
-                },
-                // Other p2pConfig options provided by CDNBye
+            clip: {
+                sources: [
+                    // path to the HLS m3u8
+                    { type: "application/x-mpegurl", src: "//138.197.59.74:8080/hls/fartss.m3u8"}]
             }
-        }
-    });
+        });
 </script>
-</body></html>
+    </body>
+</html>
