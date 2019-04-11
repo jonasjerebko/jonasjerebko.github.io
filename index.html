@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FartsHD</title>
     <link rel="shortcut icon" type="image/x-icon" href="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/image/favicon.png"/>
-<style>
+<style>             
 body{margin:0px;padding:0px;overflow:hidden;}
 </style>
    <!-- Hls.js script -->
@@ -17,7 +17,7 @@ body{margin:0px;padding:0px;overflow:hidden;}
 if (Hls.isSupported()) {
             var video = document.getElementById('player');
             var player = new Hls();
-            player.loadSource('http://138.197.58.115:8080/hls/fartss.m3u8');
+            player.loadSource('//138.197.58.115:8080/hls/fartss.m3u8');
             player.attachMedia(video);
             player.on(Hls.Events.MANIFEST_PARSED, function() {
                 video.play();
