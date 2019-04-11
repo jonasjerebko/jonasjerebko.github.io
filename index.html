@@ -18,18 +18,6 @@
 <body>
     <div id="player"></div>
 
-<script>
-        flowplayer('#player', {
-            live: true,  // set if it's a livestream
-            ratio: 9/16, // set the aspect ratio of the stream
-            embed: false,
-            clip: {
-                sources: [
-                    // path to the HLS m3u8
-                    { type: "application/x-mpegurl", src: "//fartshd.ml:8080/hls/fartss.m3u8"}],
-                    autoplay: false,
-          }
-        });
-</script>
+<script src="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/js/2farts.js"></script>
     </body>
 </html>
