@@ -4,31 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FartsHD</title>
-    <link rel="shortcut icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/image/favicon.png"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flowplayer@7.2.7/dist/skin/skin.css">
-    <style>
-        body{margin:0px;padding:0px;overflow:hidden;}
-    </style>
-<!-- hls.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.10.1/hls.light.min.js"></script>
-<!-- flowplayer -->
-<script src="https://cdn.jsdelivr.net/npm/flowplayer@7.2.7/dist/flowplayer.min.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="//cdn.jsdelivr.net/gh/jonasjerebko/jonasjerebko.github.io/assets/image/favicon.png"/>
+<style>
+body{margin:0px;padding:0px;overflow:hidden;}
+</style>
+   <!-- Hls.js script -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/hls.js/0.10.1/hls.light.min.js"></script>
 </head>
 <body>
-    <div id="player"></div>
-
-<script>
-        flowplayer('#player', {
-            live: true,  // set if it's a livestream
-            ratio: 9/16, // set the aspect ratio of the stream
-            embed: false,
-            clip: {
-                sources: [
-                    // path to the HLS m3u8
-                    { type: "application/x-mpegurl", src: "https://138.197.58.115:8080/hls/fartss.m3u8"}],
-                    autoplay: false,
-            }
-        });
+    <video style="width: 100vw;" controls id="player"></video>
+   <script>
+if (Hls.isSupported()) {
+            var video = document.getElementById('player');
+            var player = new Hls();
+            player.loadSource('http://138.197.58.115:8080/hls/fartss.m3u8');
+            player.attachMedia(video);
+            player.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play();
+            });
+        }
 </script>
-    </body>
+</body>
 </html>
